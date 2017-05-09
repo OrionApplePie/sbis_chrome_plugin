@@ -1,0 +1,30 @@
+{
+"manifest_version": 2,
+"name": "sbis uncover",
+"description": "Расширение раскрывает некоторые числа на странице контрагента sbis.ru",
+"version": "1.0",
+
+"icons": { "16": "icons/icon16.png",
+           "48": "icons/icon48.png",
+          "128": "icons/icon128.png" },
+
+"browser_action": {
+    "default_title": "sbis.ru uncover",
+    "default_icon": "icons/icon16.png"
+},
+
+"web_accessible_resources": ["load.gif"],
+
+"content_scripts": [{
+   "matches": ["https://sbis.ru/contragents/*"],
+   "js": ["thirdParty/jquery-3.2.1.min.js", "content.js"]
+ }],
+
+"background": {
+  "scripts": ["thirdParty/jquery-3.2.1.min.js", "background.js"]
+},
+
+"permissions":[
+  "https://sbis.ru/contragents/*", "tabs", "activeTab"
+]
+}
