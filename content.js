@@ -28,15 +28,26 @@ $("html").find(".cCard__Reliability-Cost-Desktop").
 chrome.runtime.onMessage.addListener(
   function(request, sender) {
     // замена значений на странице
-    $("html").find(".cCard__Contacts-Revenue-Desktop").
-              find(".cCard__BlockMaskSum").html(request.revenue);
+    var revenue = $("html").find(".cCard__Contacts-Revenue-Desktop").
+                            find(".cCard__BlockMaskSum");
 
-    $("html").find(".cCard__Owners-Profit-Desktop").
-              find(".cCard__BlockMaskSum").text(request.profit);
+    $(revenue).css("color", "#000");
+    $(revenue).html(request.revenue);
 
-    $("html").find(".cCard__Reliability-Cost-Desktop").
-              find(".cCard__BlockMaskSum").text(request.cost);
+    var profit = $("html").find(".cCard__Owners-Profit-Desktop").
+                           find(".cCard__BlockMaskSum");
 
+    $(profit).css("color", "#000");
+    $(profit).html(request.profit);
+
+    var cost = $("html").find(".cCard__Reliability-Cost-Desktop").
+                         find(".cCard__BlockMaskSum");
+
+    $(cost).css("color", "#000");
+    $(cost).html(request.cost);
+
+
+    //
     $("html").find(".cCard__EconomyResult-Mobile-Revenue").
               find(".cCard__BlockMaskSum").text(request.revenue);
 

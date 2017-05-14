@@ -30,7 +30,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       var resCost;
       var xhr = new XMLHttpRequest();
       var count = 0;
-
+      var maxCount = 100;
       do {
         // в цикле посылаются запросы до тех пор пока не откроются все 3 числа
         xhr.open("GET", "https://" + baseUrl[1] + "/" + count.toString(), false);
@@ -59,7 +59,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
           count++;
         }
-      } while (resRevenue.indexOf(String.fromCharCode(9617)) != -1 ||
+      } while (count <= maxCount &&
+               resRevenue.indexOf(String.fromCharCode(9617)) != -1 ||
                resProfit.indexOf(String.fromCharCode(9617)) != -1 ||
                resCost.indexOf(String.fromCharCode(9617)) != -1);
 
