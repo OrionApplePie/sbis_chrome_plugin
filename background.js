@@ -41,13 +41,13 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
           var html = xhr.responseText;
 
           var revenue = $(html).find(".cCard__Contacts-Revenue-Desktop").
-                                find(".cCard__BlockMaskSum").text();
+                                find(".cCard__BlockMaskSum").data("row");
 
           var profit = $(html).find(".cCard__Owners-Profit-Desktop").
-                               find(".cCard__BlockMaskSum").text();
+                               find(".cCard__BlockMaskSum").data("row");
 
           var cost = $(html).find(".cCard__Reliability-Cost-Desktop").
-                             find(".cCard__BlockMaskSum").text();
+                             find(".cCard__BlockMaskSum").data("row");
 
           var revenueArr = Array.from(revenue);
           var profitArr = Array.from(profit);

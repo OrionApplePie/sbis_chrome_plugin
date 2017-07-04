@@ -1,0 +1,9 @@
+.uncover {
+  float: right;
+  margin-top: 3px;
+  font-family: 'TensorFont Обычный',TensorFont;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-align: right;
+}
